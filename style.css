@@ -1,0 +1,265 @@
+/* General Styles */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #00b4d8;
+    --accent-color: #28a745;
+    --dark-bg: #343a40;
+    --light-bg: #f8f9fa;
+    --text-dark: #2d3436;
+    --text-light: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-light);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav input[type="text"] {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+nav input[type="text"]:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    width: 200px;
+}
+
+.admin-panel {
+    background: linear-gradient(135deg, var(--dark-bg), #2b2d42);
+    /* background-color: ; */
+    background-image: url(https://api.deepai.org/job-view-file/c97f1bb4-7b43-48a8-be27-a0f08fee4ee2/outputs/output.jpg);
+    color: var(--text-light);
+    padding: 2rem;
+    text-align: center;
+    margin-top: -1px;
+    border-bottom: 3px solid var(--accent-color);
+    height: 7cm;
+}
+
+.admin-panel button {
+    background: linear-gradient(135deg, var(--accent-color), #1e7d5e);
+    color: var(--text-light);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    margin: 0 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.add-patient, .statistics, .feedback {
+    background: var(--text-light);
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.add-patient:hover, .statistics:hover, .feedback:hover {
+    transform: translateY(-5px);
+}
+
+button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gender {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.gender label {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    background: rgba(0, 180, 216, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gender label:hover {
+    background: rgba(0, 180, 216, 0.2);
+}
+
+.gender input[type="radio"]:checked + span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.statistics .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.statistics p {
+    background: rgba(0, 180, 216, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.statistics strong {
+    display: block;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+.feedback .reviews {
+    margin-top: 1.5rem;
+}
+
+.feedback .reviews p {
+    background: rgba(0, 180, 216, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.feedback .reviews p::before {
+    content: '🗨';
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    background: var(--text-light);
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--dark-bg);
+    color: var(--text-light);
+    margin-top: 3rem;
+}
+
+footer a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .statistics .stats {
+        grid-template-columns: 1fr;
+    }
+}

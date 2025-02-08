@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Mediflow</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Patients</a></li>
+                <li><a href="#">Inventory</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><input type="text" placeholder="Search"></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="admin-panel" >
+        <h2 >Admin Dashboard</h2>
+        <button onclick="generateReport()">Generate Reports</button>
+        <button onclick="manageUsers()">Manage Users</button>
+    </section>
+
+    <section class="add-patient">
+        <h2>Add New Patient</h2>
+        <input type="text" id="patientName" placeholder="Enter patient name">
+        <div class="gender">
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
+        <button onclick="addPatient()">Add Patient</button>
+    </section>
+
+    <section class="statistics">
+        <h2>Hospital Statistics</h2>
+        <button>View Details</button>
+        <div class="stats">
+            <p>Beds Occupied: <strong>75</strong></p>
+            <p>Admissions Today: <strong>20</strong></p>
+            <p>Medicines Dispensed: <strong>500</strong></p>
+        </div>
+    </section>
+
+    <section class="feedback">
+        <h2>Patient Feedback</h2>
+        <input type="text" id="feedbackInput" placeholder="Write a review">
+        <button onclick="submitFeedback()">Submit</button>
+        <div class="reviews" id="feedbackList">
+            <p><strong>John Doe</strong>: Excellent care and quick service! ⭐⭐⭐⭐⭐</p>
+            <p><strong>Jane Smith</strong>: Friendly staff and clean facilities! ⭐⭐⭐⭐</p>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 HospitalXYZ. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </footer>
+    
+    <script src="hack4.js"></script>
+</body>
+</html>
